@@ -1,19 +1,24 @@
 const log = require('./logger')
 
 function getDateString() {
-    const yesterday = new Date(Date.now() - 864e5);
-    return `${yesterday.getDate()}/${yesterday.getMonth() + 1}/${yesterday.getYear().toString().slice(1)}`
+
+    const yesterday = new Date(Date.now() - 864e5)
+
+    return `${yesterday.getDate()}/${yesterday.getMonth() + 1}/${yesterday.getYear().toString()
+        .slice(1)}`
+
 }
 
 async function main() {
 
     log.info('-------- Begin New Cycle --------')
-    log.info(`[main] Starting crawl for ${(new Date(Date.now() - 864e5)).toISOString().split('T')[0]}`)
+    log.info(`[main] Starting crawl for ${new Date(Date.now() - 864e5).toISOString()
+        .split('T')[0]}`)
 
     // initialise data object
     let data = {
         date: getDateString(),
-        time: "18:00",
+        time: '18:00'
     }
 
     // gather data from https://wow.metoffice.gov.uk/

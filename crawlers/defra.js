@@ -18,6 +18,7 @@ async function defra() {
     await axios.post('https://uk-air.defra.gov.uk/data/datawarehouse', `f_query_id=${queryID}&f_site_id%5B%5D=AB001&f_output=screen&go=Step+4+&action=da_6&f_group_id=&uksid=e880e788c4b7903722af846fb29d0868dbfd6a46`)
     // final step
     let $ = cheerio.load((await axios.post('https://uk-air.defra.gov.uk/data/datawarehouse', `f_query_id=${queryID}&action=da_7&f_group_id=&go=Get+Data&uksid=e880e788c4b7903722af846fb29d0868dbfd6a46`)).data)
+
     log.info('[defra] Loaded final page data')
 
     const stertStreet = $('tr')[19].childNodes[5].firstChild.data

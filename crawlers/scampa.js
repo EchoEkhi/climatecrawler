@@ -4,11 +4,12 @@ const log = require('../logger')
 
 async function scampa() {
 
-    const yesterday = new Date(Date.now() - 864e5);
+    const yesterday = new Date(Date.now() - 864e5)
     const dateString = yesterday.toISOString().split('T')[0]
 
     log.info('[scampa] Loading page')
-    $ = cheerio.load((await axios.get(`http://scampa.herokuapp.com/${dateString}/smooth`)).data)
+    const $ = cheerio.load((await axios.get(`http://scampa.herokuapp.com/${dateString}/smooth`)).data)
+
     log.info('[scampa] Loaded page')
 
     const rawScript = $('script')[3].children[0].data
