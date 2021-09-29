@@ -7,6 +7,9 @@ async function sheet(data) {
 
     // Initialize Auth - see more available options at https://theoephraim.github.io/node-google-spreadsheet/#/getting-started/authentication    
     const creds = require('./creds.json');
+
+    log.info('[sheets] Authenticating')
+
     await doc.useServiceAccountAuth(creds);
 
     log.info('[sheets] Authenticated')

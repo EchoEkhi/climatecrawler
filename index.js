@@ -7,7 +7,8 @@ function getDateString() {
 
 async function main() {
 
-    log.info('[main] Starting crawl...')
+    log.info('-------- Begin New Cycle --------')
+    log.info(`[main] Starting crawl for ${(new Date(Date.now() - 864e5)).toISOString().split('T')[0]}`)
 
     // initialise data object
     let data = {
@@ -28,7 +29,7 @@ async function main() {
     log.info(JSON.stringify(data))
 
     // insert data into https://docs.google.com/spreadsheets/d/10gxzHEYtfkr9U913lN4Tsoe2HetMBB_MQ10NaUF5-o0/
-    require('./sheets')(data)
+    await require('./sheets')(data)
 
     log.info('[main] All completed')
 
