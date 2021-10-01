@@ -22,19 +22,19 @@ async function main() {
     }
 
     // gather data from https://wow.metoffice.gov.uk/
-    //data = { ...data, ...await require('./crawlers/met') }
+    data = { ...data, ...await require('./crawlers/met') }
 
     // gather data from https://uk-air.defra.gov.uk/data/
     data = { ...data, ...await require('./crawlers/defra') }
 
     // gather data from http://scampa.herokuapp.com/
-    //data = { ...data, ...await require('./crawlers/scampa') }
+    data = { ...data, ...await require('./crawlers/scampa') }
 
     log.info('[main] Crawl complete')
     log.info(JSON.stringify(data))
 
     // insert data into https://docs.google.com/spreadsheets/d/10gxzHEYtfkr9U913lN4Tsoe2HetMBB_MQ10NaUF5-o0/
-    //await require('./sheets')(data)
+    await require('./sheets')(data)
 
     log.info('[main] All completed')
 
