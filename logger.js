@@ -14,7 +14,7 @@ const log = winston.createLogger({
             filename: __dirname + '/logs/%DATE%.log',
             datePattern: 'YYYY-MM-DD',
             zippedArchive: true,
-            maxFiles: '100d'
+            maxFiles: '7d'
         })
     ]
 })
