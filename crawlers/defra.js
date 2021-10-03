@@ -36,12 +36,14 @@ async function defra() {
     log.info('[defra] Loaded final page data')
 
     const highStreet = $('tr')[19].childNodes[5].firstChild.data
+    const pm10at18 = $('tr')[19].childNodes[9].firstChild.data
 
     log.info('[defra] Complete')
 
     return {
         stertStreet,
-        highStreet
+        highStreet,
+        pm10at18
     }
 
 }

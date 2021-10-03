@@ -17,7 +17,7 @@ async function sheets(data) {
     await doc.loadInfo() // loads document properties and worksheets
     const sheet = doc.sheetsByIndex[0]
 
-    await sheet.addRow([data.date, data.time, data.temperature, data.humidity, data.windDirection, data.windSpeed, '', data.stertStreet, data.highStreet, data.pm2p5at16, data.pm2p5at17, data.pm10at16, data.pm10at17, data.pm10at12])
+    await sheet.addRow([data.date, data.time, data.temperature, data.humidity, data.windDirection, data.windSpeed, '', data.stertStreet, data.highStreet, data.pm2p5at16, data.pm2p5at17, data.pm10at16, data.pm10at17, data.pm10at18])
     log.info('[sheets] Data added')
 
 }

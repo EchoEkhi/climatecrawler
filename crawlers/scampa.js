@@ -21,11 +21,6 @@ async function scampa() {
     const pm10at17 = lines[baseIndex + 39].trim().replace(',', '')
     const pm10at16 = lines[baseIndex + 37].trim().replace(',', '')
 
-    // find the line containing "          label: "Sensor 48673","
-    baseIndex = lines.indexOf('          label: "Sensor 48673",')
-
-    const pm10at12 = lines[baseIndex + 37].trim().replace(',', '')
-
     // find the line containing "          label: "Abingdon School","
     baseIndex = lines.indexOf('          label: "Abingdon School",', baseIndex)
     const pm2p5at17 = lines[baseIndex + 39].trim().replace(',', '')
@@ -34,7 +29,6 @@ async function scampa() {
     log.info('[scampa] Complete')
 
     return {
-        pm10at12,
         pm10at16,
         pm10at17,
         pm2p5at16,
