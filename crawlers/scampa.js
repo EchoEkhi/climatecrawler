@@ -18,21 +18,21 @@ async function scampa() {
     const lines = rawScript.split('\n')
     let baseIndex = lines.indexOf('          label: "Abingdon School",')
 
-    const pm10at17 = lines[baseIndex + 39].trim().replace(',', '')
+    const pm10at18 = lines[baseIndex + 41].trim().replace(',', '')
     const pm10at16 = lines[baseIndex + 37].trim().replace(',', '')
 
     // find the line containing "          label: "Abingdon School","
     baseIndex = lines.indexOf('          label: "Abingdon School",', baseIndex)
-    const pm2p5at17 = lines[baseIndex + 39].trim().replace(',', '')
+    const pm2p5at18 = lines[baseIndex + 41].trim().replace(',', '')
     const pm2p5at16 = lines[baseIndex + 37].trim().replace(',', '')
 
     log.info('[scampa] Complete')
 
     return {
         pm10at16,
-        pm10at17,
+        pm10at18,
         pm2p5at16,
-        pm2p5at17
+        pm2p5at18
     }
 
 }
