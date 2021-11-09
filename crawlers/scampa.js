@@ -4,6 +4,8 @@ const log = require('../logger')
 
 async function scampa() {
 
+    // TODO: migrate this to use the CSV API from sensor.community
+
     const yesterday = new Date(Date.now() - 864e5)
     const dateString = yesterday.toISOString().split('T')[0]
 
